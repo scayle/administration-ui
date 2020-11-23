@@ -1,15 +1,10 @@
-import React from "react"
-import {observer} from "mobx-react-lite";
+import React from "react";
+import { observer } from "mobx-react-lite";
 
-interface Props {
-}
+interface Props {}
 
-const Users = observer(({}: Props) => {
-    return (
-        <>
-            users
-        </>
-    )
-})
+const Users = observer(({ }: Props) => {
+  return <>LOOL </>;
+});
 
 export default Users;
