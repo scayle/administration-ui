@@ -20,7 +20,7 @@ export class Client {
   public setToken(authToken: string) {
     this.apollo.setLink(
       new HttpLink({
-        uri: process.env.GATEWAY_HOST,
+        uri: "http://localhost:8080/v1",
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

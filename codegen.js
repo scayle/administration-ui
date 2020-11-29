@@ -1,10 +1,10 @@
 module.exports = {
   schema: './external/gateway/graph/definition/**/*.graphql',
-  documents: './src/**/*',
+  documents: './src/api/operations**/*.{ts,tsx}',
   overwrite: true,
   generates: {
     './src/graphql/types.d.ts': {
-      plugins: ['typescript'],
+      plugins: ['typescript', 'typescript-operations'],
       config: {
         skipTypename: false,
         withHooks: true,

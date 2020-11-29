@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
+    "@material-ui/core": "^4.11.1",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
@@ -29,7 +31,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate": "ts-node --compiler-options \"{\\\"isolatedModules\\\":false}\" pre-generate.ts && graphql-codegen --config codegen.js"
+    "generate": "ts-node --compiler-options \"{\\\"isolatedModules\\\":false}\" pre-generate.ts && graphql-codegen --config codegen.js",
+    "lint": "eslint --cache --fix ./src/**/* --ext js,ts,tsx",
+    "format": "prettier --write ./src/**/* --ignore-unknown"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +57,7 @@
     "@graphql-codegen/cli": "^1.19.1",
     "@graphql-codegen/introspection": "^1.18.0",
     "@graphql-codegen/typescript": "^1.17.11",
+    "@graphql-codegen/typescript-operations": "^1.17.12",
     "apollo": "^2.31.1",
     "eslint": "^7.14.0",
     "husky": "^4.3.0",
