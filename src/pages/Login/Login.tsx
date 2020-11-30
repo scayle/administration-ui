@@ -4,6 +4,7 @@ import { FormikHelpers } from "formik/dist/types";
 import { MutationLoginArgs } from "../../graphql/types";
 import { observer } from "mobx-react-lite";
 import { useAppStore } from "../../globalStores/AppStore/AppStore";
+import { Column, Row } from "../../components/flex";
 
 interface Values extends MutationLoginArgs {}
 
@@ -25,25 +26,35 @@ const Login = observer(({ children }: Props) => {
 
   if (!appStore.authStore.isLoggedIn) {
     return (
-      <Formik<Values>
-        onSubmit={handleSubmit}
-        initialValues={{
-          username: "",
-          password: "",
-        }}
-      >
-        {({ isSubmitting }) => (
-          <Form>
-            <Field type="text" name="username" />
-            <ErrorMessage name="username" component="div" />
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-            <button type="submit" disabled={isSubmitting}>
-              Login
-            </button>
-          </Form>
-        )}
-      </Formik>
+      <div className="center flex">
+        <Row>
+          <Column>
+            <Formik<Values>
+              onSubmit={handleSubmit}
+              initialValues={{
+                username: "",
+                password: "",
+              }}
+            >
+              {({ isSubmitting }) => (
+                <Form>
+                  <Field type="text" name="username" />
+                  <ErrorMessage name="username" component="div" />
+                  <br />
+                  <Field type="password" name="password" />
+                  <ErrorMessage name="password" component="div" />
+                  <br />
+                  <div className="center flex">
+                    <button type="submit" disabled={isSubmitting}>
+                      Login
+                    </button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
+          </Column>
+        </Row>
+      </div>
     );
   }
 
