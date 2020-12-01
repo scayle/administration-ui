@@ -5,6 +5,7 @@ import { MutationLoginArgs } from "../../graphql/types";
 import { observer } from "mobx-react-lite";
 import { useAppStore } from "../../globalStores/AppStore/AppStore";
 import { Column, Row } from "../../components/flex";
+import Button from "../../components/button";
 
 interface Values extends MutationLoginArgs {}
 
@@ -45,9 +46,9 @@ const Login = observer(({ children }: Props) => {
                   <ErrorMessage name="password" component="div" />
                   <br />
                   <div className="center flex">
-                    <button type="submit" disabled={isSubmitting}>
+                    <Button ripple type="submit" disabled={isSubmitting}>
                       Login
-                    </button>
+                    </Button>
                   </div>
                 </Form>
               )}

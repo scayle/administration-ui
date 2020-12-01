@@ -1,0 +1,21 @@
+/*
+TODO: better colors
+  https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=0040ff&secondary.color=FFC400&secondary.text.color=000000&primary.text.color=ffffff
+ */
+:root,
+[data-theme="dark"] {
+  --color-primary: green;
+  --color-primary-light: #6e6cff;
+  --color-primary-dark: #0017ca;
+  --color-primary-text: red;
+
+  --color-secondary: #ffc400;
+  --color-secondary-light: #fff64f;
+  --color-secondary-dark: #c79400;
+  --color-secondary-text: #000000;
+
+  --breakpoint-tablet: 481px;
+  --breakpoint-small: 769px;
+  --breakpoint-large: 1025px;
+  --breakpoint-extra-large: 1201px;
+}

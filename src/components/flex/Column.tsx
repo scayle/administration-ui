@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./flex.css";
+import "./flex.scss";
 
 const Column = ({
   className,
@@ -10,7 +10,10 @@ const Column = ({
   HTMLDivElement
 >) => {
   return (
-    <div {...props} className={`column${className ? ` ${className}` : ""}`} />
+    <div
+      {...props}
+      className={`sdc-column${className ? ` ${className}` : ""}`}
+    />
   );
 };
 
