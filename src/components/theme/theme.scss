@@ -1,4 +1,6 @@
-[data-theme] {
+@import "./mixin";
+
+:root {
   .sdc-primary {
     background: var(--color-primary);
     color: var(--color-primary-text);
@@ -58,4 +60,22 @@
   }
 
   font-family: var(--font-family);
+
+  --space-unit: 0.2em;
+
+  @include breakpoint(sm) {
+    --space-unit: 0.4em;
+  }
+
+  @include breakpoint(md) {
+    --space-unit: 0.6em;
+  }
+
+  @include breakpoint(lg) {
+    --space-unit: 1em;
+  }
+
+  @include breakpoint(xl) {
+    --space-unit: 1.4em;
+  }
 }

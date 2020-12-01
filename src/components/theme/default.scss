@@ -14,17 +14,6 @@ TODO: better colors
   --color-secondary-dark: #c79400;
   --color-secondary-text: #000000;
 
-  $breakpoints: (
-    // Small screen / phone
-    tablet: 544px,
-    // Medium screen / tablet
-    small: 768px,
-    // Large screen / desktop (980 + (12 * 2)) <= container + gutters
-    large: 1012px,
-    // Extra large screen / wide desktop
-    extra-large: 1280px
-  ) !default;
-
   // body font size
   --text-base-size: 1em;
 
@@ -56,20 +45,6 @@ TODO: better colors
   --space-xxl: calc(5.25 * var(--space-unit));
   --space-xxxl: calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
-
-  @mixin breakpoint($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-      @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
-        @content;
-      }
-    } @else if unitless($breakpoint) {
-      $breakpoint: $breakpoint + 0px;
-
-      @media (min-width: $breakpoint) {
-        @content;
-      }
-    }
-  }
 }
 
 :root,
