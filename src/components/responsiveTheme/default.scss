@@ -3,17 +3,6 @@ TODO: better colors
   https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=0040ff&secondary.color=FFC400&secondary.text.color=000000&primary.text.color=ffffff
  */
 :root {
-  // colors
-  --color-primary: #0040ff;
-  --color-primary-light: #6e6cff;
-  --color-primary-dark: #0017ca;
-  --color-primary-text: #ffffff;
-
-  --color-secondary: #ffc400;
-  --color-secondary-light: #fff64f;
-  --color-secondary-dark: #c79400;
-  --color-secondary-text: #000000;
-
   // body font size
   --text-base-size: 1em;
 
@@ -28,9 +17,6 @@ TODO: better colors
   --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
   --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
   --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
-
-  // font
-  --font-family: "Roboto", sans-serif;
 
   // space
   --space-unit: 1em;
@@ -48,5 +34,5 @@ TODO: better colors
 }
 
 :root,
-[data-theme="default"] {
+[data-responsive-theme="default"] {
 }

@@ -1,4 +1,4 @@
-export { default } from "./Theme";
+export { default } from "./ResponsiveTheme";
 
 export enum FontSize {
   xs = "xs",

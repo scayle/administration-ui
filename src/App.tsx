@@ -5,6 +5,9 @@ import AppStore from "./globalStores/AppStore";
 import Users from "./pages/Users";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import "@rmwc/button/dist/styles";
+import "@rmwc/textfield/dist/styles";
+
 function App() {
   return (
     <AppStore.Provider>

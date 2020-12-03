@@ -1,17 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { ThemeProvider } from "@rmwc/theme";
 
-import Theme from "./components/theme";
-
-// import "./style/theme/dark.scss";
+import "@rmwc/theme/styles";
 import "./style/index.scss";
+import ResponsiveTheme from "./components/responsiveTheme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Theme theme="default">
-      <App />
-    </Theme>
+    <ResponsiveTheme>
+      <ThemeProvider options={{}}>
+        <App />
+      </ThemeProvider>
+    </ResponsiveTheme>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
+    "@rmwc/button": "^6.1.4",
+    "@rmwc/textfield": "^6.1.4",
+    "@rmwc/theme": "^6.1.4",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",

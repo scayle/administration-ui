@@ -8,8 +8,11 @@ html {
     #root {
       height: 100%;
 
-      [data-theme] {
+      > [data-responsive-theme] {
         height: 100%;
+        > div {
+          height: 100%;
+        }
       }
     }
   }
