@@ -8,7 +8,9 @@ import * as RMWC from "@rmwc/types";
 import { responsive } from "../hooks";
 import { SpaceSize } from "../responsiveTheme";
 
-type Props = RMWC.ComponentProps<TextFieldProps, TextFieldHTMLProps, "button">;
+import "./textfield.scss";
+
+type Props = RMWC.ComponentProps<TextFieldProps, TextFieldHTMLProps, "input">;
 
 const TextField = responsive({
   spaceSize: SpaceSize.md,

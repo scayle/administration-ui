@@ -2271,6 +2271,15 @@
     "@rmwc/ripple" "^6.1.4"
     "@rmwc/types" "^6.0.5"
 
+"@rmwc/elevation@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@rmwc/elevation/-/elevation-6.1.4.tgz#e54002751fc16be5c925364f8926c96b69e7489a"
+  integrity sha512-3mAK1ahxINXNzNfXIxr+kHp0dflafsOonFq0kna/V7+QPpd1Gl2Hi+cpqqKL03FREYlTOpQxVMDG5byyDXYFog==
+  dependencies:
+    "@material/elevation" "^5.1.0"
+    "@rmwc/base" "^6.1.4"
+    "@rmwc/types" "^6.0.5"
+
 "@rmwc/floating-label@^6.1.4":
   version "6.1.4"
   resolved "https://registry.yarnpkg.com/@rmwc/floating-label/-/floating-label-6.1.4.tgz#02976c4685f8425e72c8a1725a5343ca2cde934a"

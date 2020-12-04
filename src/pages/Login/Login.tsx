@@ -1,13 +1,13 @@
 import React from "react";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ErrorMessage, Form, Formik } from "formik";
 import { FormikHelpers } from "formik/dist/types";
 import { MutationLoginArgs } from "../../graphql/types";
 import { observer } from "mobx-react-lite";
 import { useAppStore } from "../../globalStores/AppStore/AppStore";
 import { Column, Row } from "../../components/flex";
-import Button from "../../components/button/Button";
-import TextField from "../../components/textField/TextField";
-import { SpaceSize } from "../../components/responsiveTheme";
+import { Button } from "../../components";
+import { TextInput } from "../../components/formik";
+import { Elevation } from "@rmwc/elevation";
 
 interface Values extends MutationLoginArgs {}
 
@@ -32,45 +32,35 @@ const Login = observer(({ children }: Props) => {
       <div className="center flex">
         <Row>
           <Column>
-            <Formik<Values>
-              onSubmit={handleSubmit}
-              initialValues={{
-                username: "",
-                password: "",
-              }}
-            >
-              {({ isSubmitting }) => (
-                <Form>
-                  <Field
-                    type="text"
-                    name="username"
-                    component={() => (
-                      <TextField name="username" type="text" label="Username" />
-                    )}
-                  />
-                  <ErrorMessage name="username" component="div" />
-                  <br />
-                  <Field
-                    type="password"
-                    name="password"
-                    component={() => (
-                      <TextField
-                        name="password"
-                        type="password"
-                        label="Password"
-                      />
-                    )}
-                  />
-                  <ErrorMessage name="password" component="div" />
-                  <br />
-                  <div className="center flex">
-                    <Button type="submit" disabled={isSubmitting}>
-                      Login
-                    </Button>
-                  </div>
-                </Form>
-              )}
-            </Formik>
+            <Elevation z={3}>
+              <Formik<Values>
+                onSubmit={handleSubmit}
+                initialValues={{
+                  username: "",
+                  password: "",
+                }}
+              >
+                {({ isSubmitting }) => (
+                  <Form>
+                    <TextInput name="username" type="text" label="Username" />
+                    <ErrorMessage name="username" component="div" />
+                    <br />
+                    <TextInput
+                      name="password"
+                      type="password"
+                      label="password"
+                    />
+                    <ErrorMessage name="password" component="div" />
+                    <br />
+                    <div className="center flex">
+                      <Button type="submit" disabled={isSubmitting}>
+                        Login
+                      </Button>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
+            </Elevation>
           </Column>
         </Row>
       </div>

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "@rmwc/button/dist/styles";
 import "@rmwc/textfield/dist/styles";
+import "@rmwc/elevation/dist/styles";
 
 function App() {
   return (
