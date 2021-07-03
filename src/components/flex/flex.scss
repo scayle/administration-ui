@@ -1,0 +1,16 @@
+/* Flex box grid */
+.sdc-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sdc-column {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: var(--breakpoint-large)) {
+  .column {
+    flex: 1;
+  }
+}

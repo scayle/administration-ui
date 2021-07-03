@@ -1,9 +1,13 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { ErrorMessage, Form, Formik } from "formik";
 import { FormikHelpers } from "formik/dist/types";
 import { MutationLoginArgs } from "../../graphql/types";
 import { observer } from "mobx-react-lite";
 import { useAppStore } from "../../globalStores/AppStore/AppStore";
+import { Column, Row } from "../../components/flex";
+import { Button } from "../../components";
+import { TextInput } from "../../components/formik";
+import { Elevation } from "@rmwc/elevation";
 
 interface Values extends MutationLoginArgs {}
 
@@ -25,25 +29,41 @@ const Login = observer(({ children }: Props) => {
 
   if (!appStore.authStore.isLoggedIn) {
     return (
-      <Formik<Values>
-        onSubmit={handleSubmit}
-        initialValues={{
-          username: "",
-          password: "",
-        }}
-      >
-        {({ isSubmitting }) => (
-          <Form>
-            <Field type="text" name="username" />
-            <ErrorMessage name="username" component="div" />
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-            <button type="submit" disabled={isSubmitting}>
-              Login
-            </button>
-          </Form>
-        )}
-      </Formik>
+      <div className="center flex">
+        <Row>
+          <Column>
+            <Elevation z={3}>
+              <Formik<Values>
+                onSubmit={handleSubmit}
+                initialValues={{
+                  username: "",
+                  password: "",
+                }}
+              >
+                {({ isSubmitting }) => (
+                  <Form>
+                    <TextInput name="username" type="text" label="Username" />
+                    <ErrorMessage name="username" component="div" />
+                    <br />
+                    <TextInput
+                      name="password"
+                      type="password"
+                      label="password"
+                    />
+                    <ErrorMessage name="password" component="div" />
+                    <br />
+                    <div className="center flex">
+                      <Button type="submit" disabled={isSubmitting}>
+                        Login
+                      </Button>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
+            </Elevation>
+          </Column>
+        </Row>
+      </div>
     );
   }
 
